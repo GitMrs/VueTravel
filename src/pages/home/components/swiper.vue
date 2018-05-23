@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <swiper :options="swiperOption" ref="mySwiper">
+    <swiper :options="swiperOption" ref="mySwiper" v-if="showSwiper">
       <swiper-slide v-for="item in swiperList" :key="item.id">
         <img :src="item.imgUrl" width="100%">
       </swiper-slide>
@@ -10,6 +10,9 @@
 </template>
 <script>
 export default {
+  props: {
+    swiperList: Array
+  },
   data () {
     return {
       swiperOption: {
@@ -18,22 +21,15 @@ export default {
         slidesPerView: 'auto',
         centeredSlides: true,
         paginationClickable: true,
+        loop: true,
+        autoplay: true,
         spaceBetween: 30
-      },
-      swiperList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1801/1a/94428c6dea109402.jpg_640x200_2cf590d8.jpg'
-        },
-        {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1802/42/7c92b9a381e46402.jpg_640x200_1cdce2a4.jpg'
-        },
-        {
-          id: '0003',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1802/51/e78f936a5b404102.jpg_640x200_c14f0b3a.jpg'
-        }
-      ]
+      }
+    }
+  },
+  computed: {
+    showSwiper () {
+      return this.swiperList.length
     }
   }
 }

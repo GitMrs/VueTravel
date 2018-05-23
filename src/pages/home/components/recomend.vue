@@ -2,7 +2,7 @@
     <div class="recomend-wrap">
         <div class="recommend-title">热销推荐</div>
         <ul>
-            <li class="item border-bottom" v-for="item of recomendList" :key="item.id">
+            <li class="item border-bottom" v-for="item of RecomendList" :key="item.id">
                 <img class="item-img"  :src='item.imgUrl'>
                 <div class="item-info">
                     <p class="item-title">{{item.title}}</p>
@@ -16,46 +16,11 @@
 <script>
 export default {
   name: 'recomend',
+  props: {
+    RecomendList: Array
+  },
   data () {
     return {
-      recomendList: [
-        {
-          id: '11221',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-          title: '故宫',
-          desc: '东方宫殿建筑代表，世界宫殿建筑典范'
-        },
-        {
-          id: '11222',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-          title: '故宫',
-          desc: '东方宫殿建筑代表，世界宫殿建筑典范'
-        },
-        {
-          id: '11223',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-          title: '故宫',
-          desc: '东方宫殿建筑代表，世界宫殿建筑典范'
-        },
-        {
-          id: '11224',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-          title: '故宫',
-          desc: '东方宫殿建筑代表，世界宫殿建筑典范'
-        },
-        {
-          id: '11225',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-          title: '故宫',
-          desc: '东方宫殿建筑代表，世界宫殿建筑典范'
-        },
-        {
-          id: '11226',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-          title: '故宫',
-          desc: '东方宫殿建筑代表，世界宫殿建筑典范'
-        }
-      ]
     }
   }
 }
