@@ -33,10 +33,12 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
+    // 设置统用路径
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-      'styles': resolve('src/assets/style')
+      'styles': resolve('src/assets/style'),
+      'common': resolve('src/common')
     }
   },
   module: {

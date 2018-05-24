@@ -1,6 +1,6 @@
 <template>
     <ul class="list">
-        <li @touchstart='handleTouchStart'
+        <li @touchstart.prevent='handleTouchStart'
             @touchmove='handleTouchMove'
             @touchend="handleTouchEnd"
             @click="handleLetterClick"

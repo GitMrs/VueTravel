@@ -10,9 +10,12 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    // 配置接口
     proxyTable: {
       '/api': {
+        // 目标服务地址
         target: 'http://localhost:8080',
+        // 路径
         pathRewrite: {
           '^/api': '/static/mock'
         }
